@@ -1,77 +1,66 @@
-/* Apply a cute, soft aesthetic */
+/* General Styling */
 body {
     font-family: 'Arial', sans-serif;
-    text-align: center;
+    background-color: #FFE4E1; /* Soft pink background */
     margin: 0;
-    background-color: #FFE4E1; /* Soft pink for a warm, cute feel */
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
-}
-
-/* Main container: Center everything perfectly */
-#container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    text-align: center;
+}
+
+/* Main Container */
+.container {
+    background: #FFB6C1; /* Light pink for a soft look */
+    padding: 30px;
+    border-radius: 20px; /* Soft rounded edges */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
     width: 90%;
-    max-width: 600px;
-    padding: 20px;
-    background: #FFB6C1; /* Light pink for a soft, cute vibe */
-    border-radius: 20px; /* Soft rounded corners */
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
-/* Cute question styling */
-#question {
+/* Valentine's Question */
+h1 {
     font-family: 'Sacramento', cursive;
-    font-size: 48px;
-    color: #FF1493; /* Bright pink for a playful look */
-    text-shadow: 2px 2px 10px rgba(255, 105, 180, 0.5); /* Soft glow effect */
-    margin-bottom: 15px;
+    font-size: 42px;
+    color: #FF1493; /* Cute pink text */
+    text-shadow: 2px 2px 10px rgba(255, 105, 180, 0.5);
+    margin-bottom: 20px;
 }
 
-/* Image container */
-#image-container {
-    margin: 15px 0;
+/* Buttons Container */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
-/* Button styling */
+/* Yes & No Buttons */
 button {
     padding: 12px 24px;
-    margin: 10px;
     font-size: 24px;
     font-family: 'Sacramento', cursive;
-    background: #FF69B4; /* Bright pink */
+    background: #FF69B4;
     color: white;
     border: none;
-    border-radius: 50px; /* Cute rounded button */
+    border-radius: 50px;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Button hover effect */
+/* Button Hover Effects */
 button:hover {
-    background: #FF1493; /* Slightly darker pink */
+    background: #FF1493;
     transform: scale(1.08);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Button click effect */
-button:active {
-    transform: scale(0.95);
-}
-
-/* Responsive adjustments for smaller screens */
-@media (max-width: 600px) {
-    #question {
-        font-size: 36px;
-    }
-    button {
-        font-size: 20px;
-        padding: 10px 20px;
-    }
+/* GIF Styling */
+.gif_container img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
 }
