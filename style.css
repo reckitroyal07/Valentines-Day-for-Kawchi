@@ -1,13 +1,15 @@
+/* Import Cute Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
 /* General Styling */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #FFE4E1; /* Soft pink background */
     margin: 0;
-    height: 100vh;
     display: flex;
     justify-content: center; /* Centers horizontally */
     align-items: center; /* Centers vertically */
-    text-align: center;
+    height: 100vh; /* Full viewport height */
 }
 
 /* Main Container */
@@ -18,6 +20,10 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     max-width: 400px;
     width: 90%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensures everything inside is centered */
 }
 
 /* Valentine's Question */
@@ -59,6 +65,11 @@ button:hover {
 }
 
 /* GIF Styling */
+.gif_container {
+    display: flex;
+    justify-content: center; /* Ensures GIF is centered */
+}
+
 .gif_container img {
     width: 100%;
     max-width: 250px;
