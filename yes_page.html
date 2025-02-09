@@ -6,10 +6,10 @@
     <title>Knew You Would Say Yes! 💖</title>
     <link rel="stylesheet" href="./yes_style.css">
     <style>
-        /* Importing a Cute Font */
+        /* Importing Cute Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Sacramento&family=Poppins:wght@300;400;700&display=swap');
 
-        /* Background with floating hearts */
+        /* Background with dreamy gradient */
         body {
             display: flex;
             justify-content: center;
@@ -20,25 +20,29 @@
             font-family: 'Poppins', sans-serif;
             text-align: center;
             overflow: hidden;
+            position: relative;
         }
 
-        /* Animated Floating Hearts */
-        body::before {
-            content: "💖 💕 💗 💓 💞";
-            font-size: 40px;
+        /* Floating Hearts Animation */
+        .floating-hearts {
             position: absolute;
             width: 100%;
             height: 100%;
-            top: 0;
-            left: 0;
-            animation: floatHearts 8s linear infinite;
-            opacity: 0.3;
+            overflow: hidden;
             pointer-events: none;
         }
 
-        @keyframes floatHearts {
-            0% { transform: translateY(100vh) rotate(0deg); }
-            100% { transform: translateY(-100vh) rotate(360deg); }
+        .heart {
+            position: absolute;
+            font-size: 30px;
+            animation: floatHeart 5s infinite ease-in-out;
+            opacity: 0.6;
+        }
+
+        @keyframes floatHeart {
+            0% { transform: translateY(100vh) scale(1); opacity: 1; }
+            50% { opacity: 0.8; }
+            100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
         }
 
         /* Main Container */
@@ -52,9 +56,9 @@
             position: relative;
         }
 
-        /* Title Text */
+        /* Title Styling */
         .header_text {
-            font-size: 30px;
+            font-size: 40px;
             color: #ff3366;
             font-family: 'Sacramento', cursive;
             font-weight: bold;
@@ -72,7 +76,6 @@
             margin-top: 20px;
         }
 
-        /* GIF Styling */
         .gif_container img {
             width: 100%;
             max-width: 350px;
@@ -80,12 +83,31 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
-        /* Cute Sparkle Effect */
+        /* Cute Button */
+        .btn {
+            background-color: #ff5e78;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 18px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background-color: #ff3366;
+            transform: scale(1.1);
+        }
+
+        /* Sparkles */
         .sparkle {
             position: absolute;
-            width: 12px;
-            height: 12px;
-            background-color: white;
+            width: 10px;
+            height: 10px;
+            background: white;
             border-radius: 50%;
             opacity: 0.8;
             animation: sparkle 1.5s infinite;
@@ -96,15 +118,43 @@
             50% { opacity: 0.5; transform: scale(1.5); }
             100% { opacity: 1; transform: scale(1); }
         }
-
     </style>
 </head>
 <body>
+    <div class="floating-hearts"></div> <!-- Floating Hearts Container -->
+    
     <div class="container">
         <h1 class="header_text">Knew You Would Say Yes! 💖</h1>
         <div class="gif_container">
             <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmo3c3l5ODh3ZGN6NHhhaDE2Mjg1ZjkwOXczdDFxbWM3dTBtaW9zaiZlcD12MV9pbnRlcm5naWZfYnlfaWQmY3Q9cw/9XY4f3FgFTT4QlaYqa/giphy.gif">
         </div>
+        <button class="btn" onclick="window.location.href='index.html'">Back to Home</button>
     </div>
+
+    <script>
+        // Floating Hearts Effect
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.textContent = '💖';
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 3 + 4 + "s";
+            document.querySelector('.floating-hearts').appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 5000);
+        }
+        setInterval(createHeart, 500);
+
+        // Sparkle Effect
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            sparkle.style.left = Math.random() * 100 + "vw";
+            sparkle.style.top = Math.random() * 100 + "vh";
+            sparkle.style.animationDuration = Math.random() * 2 + 1 + "s";
+            document.body.appendChild(sparkle);
+            setTimeout(() => { sparkle.remove(); }, 2000);
+        }
+        setInterval(createSparkle, 300);
+    </script>
 </body>
 </html>
